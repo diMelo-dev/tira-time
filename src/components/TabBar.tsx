@@ -8,7 +8,7 @@ export const Tabbar = (props: TabbarProps) => {
   
   return (
     <View>
-      <Text>Elemento de texto</Text>
+      <Text>Elemento kkkk texto</Text>
     </View>
   )
 }
