@@ -14,5 +14,5 @@ export const AvailabilityIcon = () => {
         color: 'red',
       }
 
-  return <Ionicons {...iconProps} size={30} onPress={() => setAvailable(!available)} />
+  return <Ionicons {...iconProps} size={35} onPress={() => setAvailable(!available)} />
 }
