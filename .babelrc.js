@@ -9,6 +9,8 @@ module.exports = function(api) {
           "root": ["./src"],
           "alias": {
             "@components": "./src/components",
+            "@types": "./src/types",
+            "@scenes": "./src/scenes",
         }
         }
       ]

@@ -1,14 +1,36 @@
-import { Text, View } from "react-native"
+import { StyleSheet, Text, View } from "react-native"
 import { Touchable } from './base'
+import type { Player } from "@types"
 
-export const PlayerCard = () => {
+export type PlayerCardProps = {
+  playerId: Player['id']
+}
+
+export const PlayerCard = (props: PlayerCardProps) => {
 
   return (
-    <Touchable>
+    <Touchable style={styles.wrapper}>
       <View>
-        <Text>Danilo</Text>
+        <View>
+          <View>
+            <Text>Danilo Melo</Text>
+          </View>
+
+          <View>
+            <Text>Atacante</Text>
+          </View>
+        </View>
+
+        <View>
+        </View>
+
       </View>
     </Touchable>
   )
 }
 
+const styles = StyleSheet.create({
+  wrapper: {
+    padding: 8,
+  },
+})
