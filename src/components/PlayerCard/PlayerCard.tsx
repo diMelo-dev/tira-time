@@ -3,12 +3,18 @@ import { Touchable } from '../base'
 import type { Player } from '@types'
 import Ionicons from '@expo/vector-icons/Ionicons'
 import { AvailabilityIcon } from './AvailabilityIcon'
+import { players } from '@utils'
 
 export type PlayerCardProps = {
   playerId: Player['id']
 }
 
 export const PlayerCard = (props: PlayerCardProps) => {
+  const { playerId } = props
+  const player = players.find((player) => player.id === playerId)
+
+  if (player == null) return null
+
   return (
     <Touchable style={styles.wrapper}>
       <View style={styles.innerWrapper}>
@@ -18,13 +24,13 @@ export const PlayerCard = (props: PlayerCardProps) => {
 
         <View style={styles.rightContent}>
           <View>
-            <Text style={styles.name}>Danilo Melo</Text>
+            <Text style={styles.name}>{player.name}</Text>
 
-            <Text style={styles.position}>Atacante</Text>
+            <Text style={styles.position}>{player.name}</Text>
           </View>
 
           <View style={styles.ratingWrapper}>
-            <Text style={styles.ratingText}>{'5'}</Text>
+            <Text style={styles.ratingText}>{player.rate}</Text>
             <Ionicons name="star" size={30} />
           </View>
         </View>
