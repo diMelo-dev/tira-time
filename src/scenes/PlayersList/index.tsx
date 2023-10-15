@@ -1,14 +1,17 @@
-import { View, Text, StyleSheet } from 'react-native'
-import { PlayerCard } from '@components'
+import { View, Text, StyleSheet, FlatList } from 'react-native'
+import { ListSeparator, PlayerCard } from '@components'
 import { players } from '@utils'
+import type { Player } from '@types'
 
 export const PlayersList = () => {
+  const renderItem = ({ item }: { item: Player }) => <PlayerCard playerId={item.id} />
+
+  const separator = () => <ListSeparator height={4} />
+
   return (
     <View style={styles.container}>
       <Text>Essa é a lista</Text>
-      {players.map((player, index) => (
-        <PlayerCard key={player.id} playerId={player.id} />
-      ))}
+      <FlatList data={players} renderItem={renderItem} ItemSeparatorComponent={separator} />
     </View>
   )
 }
@@ -16,5 +19,10 @@ export const PlayersList = () => {
 const styles = StyleSheet.create({
   container: {
     width: '100%',
+  },
+  list: {
+    borderWidth: 1,
+    display: 'flex',
+    gap: 4,
   },
 })

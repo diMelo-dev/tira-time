@@ -61,4 +61,28 @@ export const players: Player[] = [
     rate: 3,
     position: 'Winger',
   },
+  {
+    id: '11',
+    name: 'Jogador 11',
+    rate: 5,
+    position: 'Winger',
+  },
+  {
+    id: '12',
+    name: 'Jogador 12',
+    rate: 3.5,
+    position: 'GK',
+  },
+  {
+    id: '13',
+    name: 'Jogador 13',
+    rate: 4,
+    position: 'ST',
+  },
+  {
+    id: '14',
+    name: 'Jogador 14',
+    rate: 3,
+    position: 'Winger',
+  },
 ]
