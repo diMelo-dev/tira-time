@@ -1,11 +1,11 @@
 import { StatusBar } from 'expo-status-bar'
 import { StyleSheet, View } from 'react-native'
-import { PlayersList } from '@scenes'
+import { Players } from '@scenes'
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <PlayersList />
+      <Players />
       <StatusBar style="auto" />
     </View>
   )
