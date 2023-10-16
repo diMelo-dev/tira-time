@@ -1,8 +1,22 @@
 import { View, StyleSheet, Text } from 'react-native'
 import Ionicons from '@expo/vector-icons/Ionicons'
 import { Touchable } from '@components/base'
+import { storePlayer } from '@utils'
+import type { Player } from '@types'
+
+const PLAYER_EXAMPLE: Player = {
+  id: '1',
+  name: 'Danilo',
+  position: 'ST',
+  rate: 5,
+}
 
 export const Header = () => {
+  const handleAddPlayer = async () => {
+    await storePlayer(PLAYER_EXAMPLE)
+    console.log('Adicionado')
+  }
+
   return (
     <View style={styles.container}>
       <View style={styles.headline}>
@@ -10,7 +24,7 @@ export const Header = () => {
         <Text style={styles.subtitle}>Fut de Domingo</Text>
       </View>
 
-      <Touchable>
+      <Touchable onPress={handleAddPlayer}>
         <Ionicons name="add-outline" size={60} />
       </Touchable>
     </View>

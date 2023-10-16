@@ -13,10 +13,12 @@ export const PlayerCard = (props: PlayerCardProps) => {
   const { playerId } = props
   const player = players.find((player) => player.id === playerId)
 
+  const handlePress = () => {}
+
   if (player == null) return null
 
   return (
-    <Touchable style={styles.wrapper}>
+    <Touchable onPress={handlePress} style={styles.wrapper}>
       <View style={styles.innerWrapper}>
         <View style={styles.leftContent}>
           <AvailabilityIcon />
